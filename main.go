@@ -3,33 +3,41 @@ package main
 import (
 	"fmt"
 )
-
 const (
-	// Token/character we don't know about
-	Illegal Type = "ILLEGAL"
+  BRACE_OPEN    =   "BRACE_OPEN"
+  BRACE_CLOSE   =   "BRACE_CLOSE"
+  STRING        =   "STRING"
+  NUMBER        =   "NUMBER"
+  COLON         =   "COLON"
+  COMMA         =   "COMMA"
+  TRUE          =   "TRUE"
+  FALSE         =   "FALSE"
+  NULL          =   "NULL"
+  BRACKET_OPEN  =   "BRACKET_OPEN"
+  BRACKET_CLOSE =   "BRACKET_CLOSE"
 
-	// End of file
-	EOF Type = "EOF"
-
-	// Literals
-	String Type = "STRING"
-	Number Type = "NUMBER"
-
-	// The six structural tokens
-	LeftBrace    Type = "{"
-	RightBrace   Type = "}"
-	LeftBracket  Type = "["
-	RightBracket Type = "]"
-	Comma        Type = ","
-	Colon        Type = ":"
-
-	// Values
-	True  Type = "TRUE"
-	False Type = "FALSE"
-	Null  Type = "NULL"
 )
+
+type Token struc{
+  Type    string
+  Value   string
+}
+
+func Tokenize(jsonString string) ([]Token,error){
+  current := 0
+  stringLength := len(jsonString)
+  fmt.Println(stringLength)
+  tokens := []Token{}
+  
+  for current < stringLength{
+
+  }
+
+
+}
+
 
 func main() {
 	fmt.Println("Welcome to JSON Parser!!!")
-
+  
 }
