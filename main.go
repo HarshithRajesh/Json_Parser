@@ -2,42 +2,32 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
-const (
-  BRACE_OPEN    =   "BRACE_OPEN"
-  BRACE_CLOSE   =   "BRACE_CLOSE"
-  STRING        =   "STRING"
-  NUMBER        =   "NUMBER"
-  COLON         =   "COLON"
-  COMMA         =   "COMMA"
-  TRUE          =   "TRUE"
-  FALSE         =   "FALSE"
-  NULL          =   "NULL"
-  BRACKET_OPEN  =   "BRACKET_OPEN"
-  BRACKET_CLOSE =   "BRACKET_CLOSE"
-
-)
-
-type Token struc{
-  Type    string
-  Value   string
-}
-
-func Tokenize(jsonString string) ([]Token,error){
-  current := 0
-  stringLength := len(jsonString)
-  fmt.Println(stringLength)
-  tokens := []Token{}
-  
-  for current < stringLength{
-
-  }
-
-
-}
-
 
 func main() {
 	fmt.Println("Welcome to JSON Parser!!!")
-  
+
+	if len(os.Args) != 2 {
+		fmt.Fprintf(os.Stderr, "Usage: :%s <filename>\n", os.Args[0])
+		os.Exit(1)
+	}
+
+	filename := os.Args[1]
+
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error reading file: %v\n", err)
+		os.Exit(1)
+	}
+
+	content := string(data)
+
+	if content == "{}" {
+		fmt.Println("Valid JSON!")
+		os.Exit(0)
+	} else {
+		fmt.Println("Invalid JSON!")
+		os.Exit(0)
+	}
 }
