@@ -1,23 +1,22 @@
 package main
 
 import (
-	// "fmt"
-	"os"
+// "fmt"
+// "os"
 )
 
-func main() {
-	data, _ := os.ReadFile(os.Args[1])
-	src := string(data)
-
-	tokens := tokenize(src)
-	valid := parse(tokens)
-	if valid {
-		os.Exit(0)
-	} else {
-		os.Exit(1)
-	}
-}
-
+//	func main() {
+//		data, _ := os.ReadFile(os.Args[1])
+//		src := string(data)
+//
+//		tokens := tokenize(src)
+//		valid := parse(tokens)
+//		if valid {
+//			os.Exit(0)
+//		} else {
+//			os.Exit(1)
+//		}
+//	}
 func parse(tokens []Token) bool {
 	i := 0
 

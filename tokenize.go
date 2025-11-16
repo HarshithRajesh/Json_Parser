@@ -65,7 +65,7 @@ func tokenize(src string) []Token {
 			i++
 			continue
 		}
-		fmt.Printf("ERROR: bad char '&c'\n", ch)
+		fmt.Println("ERROR: bad char '&c'\n", ch)
 		os.Exit(1)
 	}
 	tokens = append(tokens, Token{Kind: "EOF"})
